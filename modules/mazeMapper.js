@@ -31,6 +31,7 @@ function checkPaths(maze, currentLoc) {
   const goRight = [row, col - 1,"←"];
   const goLeft = [row, col + 1,"→"];
   const goForward = [row + 1, col,"↓"];
+  const goBack = [row - 1, col,"↑"];
 
   if (goRight[1] != -1 && maze[goRight[0]][goRight[1]]===fieldCharacter) {
     availPaths.push(goRight);
@@ -42,6 +43,10 @@ function checkPaths(maze, currentLoc) {
 
   if (goForward[0] <= maze.length - 1 && maze[goForward[0]][goForward[1]]===fieldCharacter) {
     availPaths.push(goForward);
+  }
+
+  if (goBack[0] >= 1 && maze[goBack[0]][goBack[1]]===fieldCharacter &&  row> maze.length/2) {
+    availPaths.push(goBack);
   }
 
   return availPaths;
