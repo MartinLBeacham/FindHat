@@ -1,0 +1,11 @@
+{
+  "name": "find-your-hat",
+  "version": "0.1.0",
+  "description": "A terminal maze game.",
+  "main": "main.js",
+  "author": "Martin Beacham",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "prompt-sync": "^4.1.7"
+  }
+}
