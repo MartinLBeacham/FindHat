@@ -37,79 +37,92 @@ class Player {
     this.reduceHealth(5);
   }
 
-  checkOutOfBounds(){
+  checkOutOfBounds() {
     const row = this._position[0];
     const col = this._position[1];
-    return (row<0 || col<0);
-
+    return row < 0 || col < 0;
   }
 
   move(moveDirection) {
-
     const row = this._position[0];
     const col = this._position[1];
+
     switch (moveDirection) {
       case "forward":
-        if (this._direction === "B") {
-          this._position[0] = row - 1;
-        } else if ((this._direction = "F")) {
-          this._position[0] = row + 1;
-        } else if ((this._direction = "R")) {
-          this._position[1] = col + 1;
-        } else {
-          this._position[1] = col - 1;
-        }
+        this._position[0]++;
         break;
       case "backward":
-        if (this._direction === "B") {
-          this._position[0] = row + 1;
-          this._direction = "F";
-        } else if ((this._direction = "F")) {
-          this._position[0] = row - 1;
-          this._direction = "B";
-        } else if ((this._direction = "R")) {
-          this._position[1] = col - 1;
-          this._direction = "L";
-        } else {
-          this._position[1] = col + 1;
-          this._direction = "R";
-        }
-        break;
-      case "right":
-        if (this._direction === "B") {
-          this._position[1] = col - 1;
-          this._direction = "R";
-        } else if ((this._direction = "F")) {
-          this._position[1] = col + 1;
-          this._direction = "L";
-        } else if ((this._direction = "R")) {
-          this._position[0] = row + 1;
-          this._direction = "F";
-        } else {
-          this._position[0] = row - 1;
-          this._direction = "B";
-        }
+        this._position[0]--;
         break;
       case "left":
-        if (this._direction === "B") {
-          this._position[1] = col + 1;
-          this._direction = "L";
-        } else if ((this._direction = "F")) {
-          this._position[1] = col - 1;
-          this._direction = "R";
-        } else if ((this._direction = "R")) {
-          this._position[0] = row - 1;
-          this._direction = "B";
-        } else {
-          this._position[0] = row + 1;
-          this._direction = "F";
-        }
+        this._position[1]--;
         break;
-      default:
-        console.log("Enter 'forward', 'backward', 'left', 'right'");
-        return null;
+      case "right":
+        this._position[1]++;
+        break;
     }
 
+    // switch (moveDirection) {
+    //   case "forward":
+    //     if (this._direction === "B") {
+    //       this._position[0] = row - 1;
+    //     } else if ((this._direction = "F")) {
+    //       this._position[0] = row + 1;
+    //     } else if ((this._direction = "R")) {
+    //       this._position[1] = col + 1;
+    //     } else {
+    //       this._position[1] = col - 1;
+    //     }
+    //     break;
+    //   case "backward":
+    //     if (this._direction === "B") {
+    //       this._position[0] = row + 1;
+    //       this._direction = "F";
+    //     } else if ((this._direction = "F")) {
+    //       this._position[0] = row - 1;
+    //       this._direction = "B";
+    //     } else if ((this._direction = "R")) {
+    //       this._position[1] = col - 1;
+    //       this._direction = "L";
+    //     } else {
+    //       this._position[1] = col + 1;
+    //       this._direction = "R";
+    //     }
+    //     break;
+    //   case "right":
+    //     if (this._direction === "B") {
+    //       this._position[1] = col - 1;
+    //       this._direction = "R";
+    //     } else if ((this._direction = "F")) {
+    //       this._position[1] = col + 1;
+    //       this._direction = "L";
+    //     } else if ((this._direction = "R")) {
+    //       this._position[0] = row + 1;
+    //       this._direction = "F";
+    //     } else {
+    //       this._position[0] = row - 1;
+    //       this._direction = "B";
+    //     }
+    //     break;
+    //   case "left":
+    //     if (this._direction === "B") {
+    //       this._position[1] = col + 1;
+    //       this._direction = "L";
+    //     } else if ((this._direction = "F")) {
+    //       this._position[1] = col - 1;
+    //       this._direction = "R";
+    //     } else if ((this._direction = "R")) {
+    //       this._position[0] = row - 1;
+    //       this._direction = "B";
+    //     } else {
+    //       this._position[0] = row + 1;
+    //       this._direction = "F";
+    //     }
+    //     break;
+    //   default:
+    //     console.log("Enter 'forward', 'backward', 'left', 'right'");
+    //     return null;
+    // }
   }
 }
 
