@@ -4,3 +4,4 @@ function mazePrinter(maze) {
   }
 
   module.exports = mazePrinter;
+  
