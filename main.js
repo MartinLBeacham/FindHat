@@ -61,6 +61,8 @@ function userInterface() {
   if(player.checkOutOfBounds()){
     console.log('You fell off the map!');
     endGame('Loss');
+    displayField[prevRow][prevCol] = "💀"
+    Field.mazePrinter(displayField);
     return 'end';
   }
 
