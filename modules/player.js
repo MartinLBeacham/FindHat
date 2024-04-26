@@ -44,8 +44,6 @@ class Player {
   }
 
   move(moveDirection) {
-    const row = this._position[0];
-    const col = this._position[1];
 
     switch (moveDirection) {
       case "forward":
