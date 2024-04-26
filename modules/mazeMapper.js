@@ -1,4 +1,4 @@
-const { hat, hole, fieldCharacter, pathCharacter } = require("./mazeChars.js");
+const { hat, hole, fieldCharacter, pathCharacter, playerChar } = require("./mazeChars.js");
 const blankMaze = require("./blankMaze.js")
 
 function pathLength(rows, cols) {
@@ -50,7 +50,7 @@ function mazeMapper(rows, cols) {
   let currentLoc = { row: 0, col: 0 };
 //   let prevLoc = {row: 0, col: 0}
 
-  maze[0][0] = "&";
+
 
   for (pathNum = 1; pathNum <= pathLen; pathNum++) {
     // prevLoc = {row:currentLoc.row, col:currentLoc.col};

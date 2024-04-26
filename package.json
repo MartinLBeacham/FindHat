@@ -6,6 +6,7 @@
   "author": "Martin Beacham",
   "license": "GPL-3.0-or-later",
   "dependencies": {
-    "prompt-sync": "^4.1.7"
+    "prompt-sync": "^4.2.0",
+    "stringz": "^2.1.0"
   }
 }

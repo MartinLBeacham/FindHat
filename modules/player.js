@@ -46,16 +46,16 @@ class Player {
   move(moveDirection) {
 
     switch (moveDirection) {
-      case "forward":
+      case "f":
         this._position[0]++;
         break;
-      case "backward":
+      case "b":
         this._position[0]--;
         break;
-      case "left":
+      case "l":
         this._position[1]--;
         break;
-      case "right":
+      case "r":
         this._position[1]++;
         break;
     }
