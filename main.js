@@ -5,4 +5,9 @@ const testField = new Field(20, 10);
 
 const displayField = Field.blankField(testField.rows, testField.cols)
 
-Field.mazePrinter(testField.maze);
+Field.displayHoles(displayField, testField);
+
+
+Field.mazePrinter(displayField);
+
+// Field.mazePrinter(testField.maze);

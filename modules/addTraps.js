@@ -6,14 +6,16 @@ function trapLocSelect(fieldIndices) {
   return array[0];
 }
 
-function addTraps(maze, trapNum, fieldIndices) {
-    while (trapNum > 0) {
+function addTraps(maze, holeNum, fieldIndices) {
+  const holeLocs = [];  
+  while (holeNum > 0) {
     const trapLoc = trapLocSelect(fieldIndices);
+    holeLocs.push(trapLoc);
     maze[trapLoc[0]][trapLoc[1]] = hole;
-    trapNum--;
+    holeNum--;
   }
-
-  return maze;
+  console.log("Traps Added.")
+  return holeLocs;
 }
 
 module.exports = addTraps;

@@ -10,23 +10,23 @@ const {
   const findFieldIndices = require("./fieldIndicies.js");
   const addDeadEnd = require("./addDeadEnd.js");
   const blankField = require("./blankMaze.js");
-  
+  const displayHoles = require("./displayHoles.js");
+
   class Field {
     constructor(rows, cols) {
-      this.rows = rows;
-      this.cols = cols;
+      this._rows = rows;
+      this._cols = cols;
       this.field = mazeMapper(rows, cols);
       this.maze = this.field.maze;
       this.hatLoc = this.field.currentLoc;
       this.fieldIndices = this.findFieldIndices();
-      this.addTraps();
+      this._holeLocs = this.addTraps();
       this.addDeadEnd();
     }
   
     addTraps(){
-      addTraps(this.maze, Math.floor(this.maze.length*this.maze[0].length*.1),this.fieldIndices);
-      console.log("Traps Added.")
-    }
+      return addTraps(this.maze, Math.floor(this.maze.length*this.maze[0].length*.1),this.fieldIndices);
+      }
   
     addDeadEnd(){
       
@@ -43,16 +43,25 @@ const {
         mazePrinter(maze);
     }
 
-    static blankField(){
+    static blankField(rows, cols){
         return blankField(rows, cols);
     }
 
+    static displayHoles(displayField, mapField){
+
+        displayHoles(displayField, mapField);
+    }
+
     get rows(){
-        return this.rows;
+        return this._rows;
     }
 
     get cols(){
-        return this.cols;
+        return this._cols;
+    }
+
+    get holeLocs(){
+        return this._holeLocs;
     }
 
   }
